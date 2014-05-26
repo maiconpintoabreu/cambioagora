@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory
+            android:title="@string/txt_money_select">
+        <ListPreference
+                android:key="key_currenty"
+                android:dialogTitle="@string/txt_money_list"
+                android:defaultValue="BRL"
+                android:entries="@array/type_money_value_array"
+                android:entryValues="@array/type_money_array"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

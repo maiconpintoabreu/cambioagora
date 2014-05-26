@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Câmbio Agora</string>
+    <string name="txt_loading_please_wait">Carregando. Aguarde um momento</string>
+    <string name="txt_one_euro">União Européia Euro</string>
+    <string name="txt_one_libra">Reino Unido Libra</string>
+    <string name="txt_one_dolar">Dólar Americano</string>
+    <string name="txt_one_real">Real</string>
+    
+    <string name="txt_money_list">Moedas</string>
+    
+    <string name="txt_money_select">Selecione uma moeda</string>
+
+    <string name="txt_settings">Configurações</string>
+
+    <string name="txt_refresh">Atualizar</string>
+    
+    <string-array name="type_money_array">
+        <item>BRL</item>
+        <item>EUR</item>
+        <item>USD</item>
+        <item>GBP</item>
+    </string-array>
+    <string-array name="type_money_value_array">
+        <item>Real</item>
+        <item>União Européia Euro</item>
+        <item>Dólar Americano</item>
+        <item>Reino Unido Libra</item>
+    </string-array>
+
+</resources>
