@@ -39,7 +39,7 @@ public class SyncService extends IntentService {
 
 	TimerSinc timerSinc;
 	
-	private static final Integer time = 1;
+	private static final Integer time = 15;
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
@@ -69,6 +69,7 @@ public class SyncService extends IntentService {
 	private class TimerSinc extends TimerTask {
 		@Override
 		public void run() {
+			try{
 			List<Currency> currencyList = currencyDao.getAllCurrency();
 			if (checkInternetConnection()) {
 				String title = new String();
@@ -123,8 +124,11 @@ public class SyncService extends IntentService {
 			}else{
 				Toast.makeText(getApplicationContext(), "Erro ao sincronizar, sem internet!", Toast.LENGTH_SHORT).show(); //TODO: Translate
 			}
-			refreshMessageToActivity();
 			
+			refreshMessageToActivity();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 	}
 	

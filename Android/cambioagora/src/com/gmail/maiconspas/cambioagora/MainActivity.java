@@ -2,6 +2,7 @@ package com.gmail.maiconspas.cambioagora;
 
 import java.util.List;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -29,6 +33,7 @@ public class MainActivity extends SherlockActivity {
 	ListView list_currency;
 	String listPreference;
 	String listPreferenceAux;
+	ProgressDialog dialog;
 
 	private CurrencyHistoryDao currencyHistoryDao;
 	private CurrencyDao currencyDao;
@@ -46,13 +51,16 @@ public class MainActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
 
 	    LocalBroadcastManager.getInstance(this).registerReceiver(
 	            mMessageReceiver, new IntentFilter("refresh"));
 		
 		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());  
 		listPreference = sp.getString("key_currenty", null);
+		if(listPreference == null){
+			listPreference = "BRL";
+		}
+		setTitle(getText(R.string.txt_base_currency)+" = "+listPreference);
 		listPreferenceAux = listPreference;
 		list_currency = (ListView) findViewById(R.id.list_currency);
 		currencyHistoryDao = new CurrencyHistoryDao(this);
@@ -61,6 +69,21 @@ public class MainActivity extends SherlockActivity {
 		stopService(intentService);
 		startService(intentService);
 		new MakeScreenTask().execute();
+		list_currency.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				CurrencyHistory itemSelected = (CurrencyHistory) list_currency.getAdapter().getItem(position);
+				Bundle params = new Bundle();
+                params.putInt("currencyToId", itemSelected.getCurrencyToId());
+                params.putInt("currencyForId", itemSelected.getCurrencyForId());
+	        	Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                intent.putExtras(params);
+	        	startActivity(intent);
+				
+			}
+		});
 	}
 	
 	@Override
@@ -93,12 +116,15 @@ public class MainActivity extends SherlockActivity {
 		EasyTracker.getInstance(this).activityStop(this);
 	}
 	
-	
 
 	private class MakeScreenTask extends AsyncTask<String, Void, CurrencyHistory[]> {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
+			if(dialog == null){
+				dialog = ProgressDialog.show(MainActivity.this,
+						"Aguarde", "Por Favor Aguarde...");
+			}
 
 		}
 
@@ -107,6 +133,9 @@ public class MainActivity extends SherlockActivity {
 			CurrencyHistory[] retornos = new CurrencyHistory[0];
 			SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getBaseContext());  
 			listPreference = sp.getString("key_currenty", null);
+			if(listPreference == null){
+				listPreference = "BRL";
+			}
 			Currency currencyPreference = currencyDao.getCurrencyByShortName(listPreference);
 			if(currencyPreference !=null){
 				List<CurrencyHistory> currencyHistory = currencyHistoryDao.getAllCurrencyHistoryByPreference(currencyPreference.getId());
@@ -121,9 +150,13 @@ public class MainActivity extends SherlockActivity {
 
 		@Override
 		protected void onPostExecute(CurrencyHistory[] result) {
-			AdapterCurrencyHistory adapter = new AdapterCurrencyHistory(MainActivity.this, result);
+			AdapterCurrency adapter = new AdapterCurrency(MainActivity.this, result);
 			list_currency.setAdapter(adapter);
 			super.onPostExecute(result);
+			setTitle(getText(R.string.txt_base_currency)+" = "+listPreference);
+			if(result.length > 0){
+					dialog.dismiss();
+			}
 		}
 	}
 

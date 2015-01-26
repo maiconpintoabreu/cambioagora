@@ -16,6 +16,8 @@
 
     <string name="txt_refresh">Atualizar</string>
     
+    <string name="txt_base_currency">Moeda Base</string>
+    
     <string-array name="type_money_array">
         <item>BRL</item>
         <item>EUR</item>
