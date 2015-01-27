@@ -7,7 +7,8 @@ public enum EnumTypeMoney {
 	BRL(1, "http://brl.fx-exchange.com/rss.xml", "R$ "), 
 	EUR(2, "http://eur.fx-exchange.com/rss.xml", "€ "), 
 	USD(3, "http://usd.fx-exchange.com/rss.xml", "$ "),
-	GBP(4, "http://gbp.fx-exchange.com/rss.xml", "£ ");
+	GBP(4, "http://gbp.fx-exchange.com/rss.xml", "£ "),
+	CAD(5, "http://cad.fx-exchange.com/rss.xml", "C$ ");
 
 	private int cod;
 	private String desc;

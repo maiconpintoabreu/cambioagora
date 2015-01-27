@@ -19,7 +19,7 @@
 
 <resources>
 
-    <style name="Theme.Cambioagora" parent="@style/Theme.Sherlock.Light.DarkActionBar">
+    <style name="Theme.Cambioagora" parent="@style/Theme.Sherlock.Light">
         <item name="actionBarItemBackground">@drawable/selectable_background_cambioagora</item>
         <item name="popupMenuStyle">@style/PopupMenu.Cambioagora</item>
         <item name="dropDownListViewStyle">@style/DropDownListView.Cambioagora</item>
@@ -30,46 +30,44 @@
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_cambioagora</item>
         <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Cambioagora</item>
 
-                <!-- Light.DarkActionBar specific -->
-        <item name="actionBarWidgetTheme">@style/Theme.Cambioagora.Widget</item>
-
+        
     </style>
 
-    <style name="ActionBar.Solid.Cambioagora" parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBar.Solid.Cambioagora" parent="@style/Widget.Sherlock.Light.ActionBar.Solid">
         <item name="background">@drawable/ab_solid_cambioagora</item>
         <item name="backgroundStacked">@drawable/ab_stacked_solid_cambioagora</item>
         <item name="backgroundSplit">@drawable/ab_bottom_solid_cambioagora</item>
         <item name="progressBarStyle">@style/ProgressBar.Cambioagora</item>
     </style>
 
-    <style name="ActionBar.Transparent.Cambioagora" parent="@style/Widget.Sherlock.ActionBar">
+    <style name="ActionBar.Transparent.Cambioagora" parent="@style/Widget.Sherlock.Light.ActionBar">
         <item name="background">@drawable/ab_transparent_cambioagora</item>
         <item name="progressBarStyle">@style/ProgressBar.Cambioagora</item>
     </style>
 	
-    <style name="PopupMenu.Cambioagora" parent="@style/Widget.Sherlock.ListPopupWindow">	
+    <style name="PopupMenu.Cambioagora" parent="@style/Widget.Sherlock.Light.ListPopupWindow">	
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_cambioagora</item>	
     </style>
 	
-    <style name="DropDownListView.Cambioagora" parent="@style/Widget.Sherlock.ListView.DropDown">
+    <style name="DropDownListView.Cambioagora" parent="@style/Widget.Sherlock.Light.ListView.DropDown">
         <item name="android:listSelector">@drawable/selectable_background_cambioagora</item>
     </style>
 
-    <style name="ActionBarTabStyle.Cambioagora" parent="@style/Widget.Sherlock.ActionBar.TabView">
+    <style name="ActionBarTabStyle.Cambioagora" parent="@style/Widget.Sherlock.Light.ActionBar.TabView">
         <item name="android:background">@drawable/tab_indicator_ab_cambioagora</item>
     </style>
 	
-    <style name="DropDownNav.Cambioagora" parent="@style/Widget.Sherlock.Spinner.DropDown.ActionBar">
+    <style name="DropDownNav.Cambioagora" parent="@style/Widget.Sherlock.Light.Spinner.DropDown.ActionBar">
         <item name="android:background">@drawable/spinner_background_ab_cambioagora</item>
         <item name="android:popupBackground">@drawable/menu_dropdown_panel_cambioagora</item>
         <item name="android:dropDownSelector">@drawable/selectable_background_cambioagora</item>
     </style>
     
-    <style name="ProgressBar.Cambioagora" parent="@style/Widget.Sherlock.ProgressBar.Horizontal">
+    <style name="ProgressBar.Cambioagora" parent="@style/Widget.Sherlock.Light.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_horizontal_cambioagora</item>
     </style>
     
-    <style name="ActionButton.CloseMode.Cambioagora" parent="@style/Widget.Sherlock.ActionButton.CloseMode">
+    <style name="ActionButton.CloseMode.Cambioagora" parent="@style/Widget.Sherlock.Light.ActionButton.CloseMode">
         <item name="android:background">@drawable/btn_cab_done_cambioagora</item>
     </style>
     

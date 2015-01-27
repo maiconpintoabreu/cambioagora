@@ -13,11 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:paddingRight="20sp"
+        android:paddingTop="5sp"
         android:singleLine="true"
         android:textColor="#040404"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
+        android:textSize="20sp"/>
     
     <TextView
         android:id="@+id/txt_adapter_currency_for"
@@ -25,23 +24,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:paddingRight="20sp"
-        android:paddingTop="40sp"
+        android:paddingTop="45sp"
         android:singleLine="true"
         android:textColor="#040404"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="sans" />
+        android:textSize="20sp" />
     
 	<TextView
         android:id="@+id/txt_adapter_value_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/txt_adapter_currency_to"
+        android:paddingTop="5sp"
         android:paddingRight="10sp"
         android:singleLine="true"
         android:textColor="#040404"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textSize="20sp"/>
 	<TextView
         android:id="@+id/txt_adapter_value_for"
         android:layout_width="wrap_content"
@@ -51,8 +48,7 @@
         android:singleLine="true"
         android:textColor="#040404"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingTop="40sp"/>
+        android:paddingTop="45sp"/>
 
 
 </RelativeLayout>

@@ -23,12 +23,14 @@
         <item>EUR</item>
         <item>USD</item>
         <item>GBP</item>
+        <item>CAD</item>
     </string-array>
     <string-array name="type_money_value_array">
         <item>Real</item>
         <item>União Européia Euro</item>
         <item>Dólar Americano</item>
         <item>Reino Unido Libra</item>
+        <item>Dólar Canadense</item>
     </string-array>
 
 </resources>

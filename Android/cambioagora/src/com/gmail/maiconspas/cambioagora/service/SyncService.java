@@ -111,6 +111,12 @@ public class SyncService extends IntentService {
 								currencyHistory.setCurrencyToId(currencyItem.getId());
 								currencyHistory.setCurrencyForId(currencyDao.getCurrencyByShortName(EnumTypeMoney.BRL.getName()).getId());
 								currencyHistoryDao.addCurrencyHistory(currencyHistory);
+							} else if (title.contains(EnumTypeMoney.CAD.getName()) && !EnumTypeMoney.CAD.getName().equalsIgnoreCase(currencyItem.getNameShort())) {
+								CurrencyHistory currencyHistory = new CurrencyHistory();
+								currencyHistory.setHistoryRate(processValue(description));
+								currencyHistory.setCurrencyToId(currencyItem.getId());
+								currencyHistory.setCurrencyForId(currencyDao.getCurrencyByShortName(EnumTypeMoney.CAD.getName()).getId());
+								currencyHistoryDao.addCurrencyHistory(currencyHistory);
 							}
 						}
 					}

@@ -9,7 +9,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
 	// Database Version
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 
 	// Database Name
 	private static final String DATABASE_NAME = "currency_table";
@@ -80,6 +80,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(DatabaseHandler.KEY_CURRENCY_LINK, "http://usd.fx-exchange.com/rss.xml");
 		values.put(DatabaseHandler.KEY_CURRENCY_NAME_LONG, "United States Dollar");
 		values.put(DatabaseHandler.KEY_CURRENCY_NAME_SHORT, "USD");
+		db.insert(DatabaseHandler.TABLE_CURRENCY, null, values);
+		
+		values = new ContentValues();
+		values.put(DatabaseHandler.KEY_CURRENCY_NAME, "Canadian Dollar");
+		values.put(DatabaseHandler.KEY_CURRENCY_SYMBOL, "C$");
+		values.put(DatabaseHandler.KEY_CURRENCY_LINK, "http://cad.fx-exchange.com/rss.xml");
+		values.put(DatabaseHandler.KEY_CURRENCY_NAME_LONG, "Canadian Dollar");
+		values.put(DatabaseHandler.KEY_CURRENCY_NAME_SHORT, "CAD");
 		db.insert(DatabaseHandler.TABLE_CURRENCY, null, values);
 		
 		values = new ContentValues();

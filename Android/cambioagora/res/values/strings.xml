@@ -18,12 +18,14 @@
         <item>EUR</item>
         <item>USD</item>
         <item>GBP</item>
+        <item>CAD</item>
     </string-array>
     <string-array name="type_money_value_array">
         <item>Brazilian Real</item>
         <item>Euro</item>
         <item>US Dollar</item>
         <item>British Pound Sterling</item>
+        <item>Canadian Dollar</item>
     </string-array>
 
 </resources>
