@@ -6,6 +6,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.gmail.maiconspas.cambioagora.dao.CurrencyDao;
 import com.gmail.maiconspas.cambioagora.dao.CurrencyHistoryDao;
 import com.gmail.maiconspas.cambioagora.model.CurrencyHistory;
+import com.google.analytics.tracking.android.EasyTracker;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,5 +45,16 @@ public class HistoryActivity extends SherlockActivity  {
 		}
 		AdapterCurrencyHistory adapter = new AdapterCurrencyHistory(HistoryActivity.this, currencyHistoryArray);
 		listCurrencyHistory.setAdapter(adapter);
+	}
+	@Override
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance(this).activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 }

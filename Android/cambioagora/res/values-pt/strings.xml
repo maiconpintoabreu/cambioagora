@@ -18,6 +18,10 @@
     
     <string name="txt_base_currency">Moeda Base</string>
     
+    
+    <string name="txt_font">Fonte: </string>
+    <string name="txt_font_link">http://fx-exchange.com</string>
+    
     <string-array name="type_money_array">
         <item>BRL</item>
         <item>EUR</item>
